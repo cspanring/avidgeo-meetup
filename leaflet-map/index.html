@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Avid Geo Meetup</title>
+
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="leaflet/leaflet.ie.css" /><![endif]-->
+
+    <script type="text/javascript" src="leaflet/leaflet.js"></script>
+
+    <!-- <script src='wax/dist/wax.leaf.js' type='text/javascript'></script> -->
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+        }
+        a, .leaflet-container a {
+            color: #014991;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="map"></div>
+
+    <script>
+
+        var avidgeo = new L.TileLayer('http://render.mapc.org/avidgeo/{z}/{x}/{y}.png', {
+            attribution: 'Tiles: MAPC, Data: MassGIS',
+            maxZoom: 18
+        });
+
+        var map = new L.Map("map",{
+            minZoom: 14,
+            maxZoom: 18
+        })
+        .setView(new L.LatLng(42.3551, -71.0618), 14)
+        .addLayer(avidgeo);
+
+        // var tilejson = {
+        //     tilejson: '1.0.0',
+        //     scheme: "xyz",
+        //     grids: ['http://render.mapc.org/avidgeo_utfgrid/{z}/{x}/{y}.json'],
+        //     ftemplate: function (options, data) { return 0; }
+        // };
+
+        // wax.leaf.interaction()
+        //     .map(map)
+        //     .tilejson(tilejson)
+        //     .on(
+        //         {
+        //             on: function(e) {
+        //                 console.log("on");
+        //             },
+        //             off: function(e) {
+        //                 console.log("off");
+        //             }
+        //         }
+        //     );
+    </script>
+</body>
+</html>
+

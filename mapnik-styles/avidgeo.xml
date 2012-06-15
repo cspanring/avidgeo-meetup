@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#000000">
+
+<Style name="roads" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <LineSymbolizer stroke="#ffffff" />
+    <TextSymbolizer face-name="DejaVu Sans ExtraLight" placement="line" fill="#ffffff" halo-fill="#000000" halo-radius="1.2" size="12" character-spacing="2" minimum-distance="100" minimum-padding="20" allow-overlap="false" ><![CDATA[[street_nam]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <LineSymbolizer stroke="#ffffff" />
+  </Rule>
+</Style>
+<Layer name="roads"
+  srs="+proj=lcc +lat_1=42.68333333333333 +lat_2=41.71666666666667 +lat_0=41 +lon_0=-71.5 +x_0=200000 +y_0=750000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs">
+    <StyleName>roads</StyleName>
+    <Datasource>
+       <Parameter name="type"><![CDATA[postgis]]></Parameter>
+       <Parameter name="table"><![CDATA[( SELECT * FROM roads ) AS roads]]></Parameter>
+       <Parameter name="extent"><![CDATA[]]></Parameter>
+       <Parameter name="key_field"><![CDATA[]]></Parameter>
+       <Parameter name="geometry_field"><![CDATA[the_geom]]></Parameter>
+       <Parameter name="host"><![CDATA[localhost]]></Parameter>
+       <Parameter name="port"><![CDATA[5432]]></Parameter>
+       <Parameter name="user"><![CDATA[avidgeo]]></Parameter>
+       <Parameter name="password"><![CDATA[avidgeo]]></Parameter>
+       <Parameter name="dbname"><![CDATA[avidgeo]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Style name="buildings" filter-mode="first">
+  <Rule>
+    <PolygonSymbolizer fill="#000000" />
+  </Rule>
+</Style>
+<Style name="buildings-outline" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke="#ffffff" />
+  </Rule>
+</Style>
+<Layer name="buildings"
+  srs="+proj=lcc +lat_1=42.68333333333333 +lat_2=41.71666666666667 +lat_0=41 +lon_0=-71.5 +x_0=200000 +y_0=750000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs">
+    <StyleName>buildings-outline</StyleName>
+    <StyleName>buildings</StyleName>
+    <Datasource>
+       <Parameter name="type"><![CDATA[postgis]]></Parameter>
+       <Parameter name="table"><![CDATA[( SELECT * FROM buildings ) as buildings]]></Parameter>
+       <Parameter name="extent"><![CDATA[]]></Parameter>
+       <Parameter name="key_field"><![CDATA[]]></Parameter>
+       <Parameter name="geometry_field"><![CDATA[the_geom]]></Parameter>
+       <Parameter name="dbname"><![CDATA[avidgeo]]></Parameter>
+       <Parameter name="host"><![CDATA[localhost]]></Parameter>
+       <Parameter name="port"><![CDATA[5432]]></Parameter>
+       <Parameter name="user"><![CDATA[avidgeo]]></Parameter>
+       <Parameter name="password"><![CDATA[avidgeo]]></Parameter>
+    </Datasource>
+  </Layer>
+
+</Map>
