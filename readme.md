@@ -10,7 +10,7 @@ Agenda, in a nutshell:
 4. [Amazon S3](http://aws.amazon.com/s3/) - efficient storage
 5. [Leaflet](http://leaflet.cloudmade.com/) - client map
 
-## Our Basemap
+## Our [Basemap](http://tiles.mapc.org/basemap.html)
 
 <iframe src="http://tiles.mapc.org/basemap.html#zoom=10&amp;lat=42.35752&amp;lon=-71.06097" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="600" height="400"></iframe>
 
